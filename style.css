@@ -37,12 +37,19 @@ body {
     display: flex;
     justify-content: space-around;
 }
-.nav-bar .menus h3{
-    cursor: pointer;
-}
-/* .nav-bar .menus h3:hover{
 
-} */
+.nav-bar .menus a {
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: none;
+    margin: auto;
+}
+
+.nav-bar .menus a:hover {
+    transform: scale(1.2);
+    color: #333;
+}
+
 .hero {
     margin-top: 8vh;
     background: linear-gradient(#7ed9f4, #c597f1, #dfd6d6);
@@ -128,14 +135,16 @@ body {
 #inwork img {
     object-fit: contain;
     border-radius: 50%;
+    margin-top: 8px;
 }
 
 #inworker img {
     object-fit: contain;
     border-radius: 50%;
-
+    margin-top: 8px;
 }
-#H3_div{
+
+#H3_div {
     margin: auto;
     text-align: center;
     margin-left: 1%;
@@ -143,7 +152,7 @@ body {
 
 #H_div {
     margin: auto;
-     text-align: center;
+    margin-right: 8px;
 }
 
 

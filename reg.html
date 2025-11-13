@@ -16,15 +16,17 @@
             <img src="img/find.png" alt="Finding Worker">
         </div>
         <div class="menus">
-            <h3 onclick="goHome()">Home</h3>
-            <h3 onclick="loggin()">Login</h3>
-            <h3 onclick="registration()">Register</h3>
+            <a href="index.html">Home</a>
+            <a href="logged.html">Login</a>
+            <a href="reg.html">Register</a>
         </div>
     </div><br>
 
     <section class="category" id="info">
-        <h1 onclick="Userinfo(event)">User</h1>
-        <h1 onclick="ProInfo(event)">Provider</h1>
+        <div id="info">
+            <a href="User_log.html">User</a>
+            <a href="Pro_log.html">Provider</a>
+        </div>
     </section>
     <section class="foot">
         <h2>Follow Us</h2>
@@ -33,26 +35,5 @@
         <a href="#"><img src="img/insta.svg" alt="INSTA"></a>
     </section>
 </body>
-<script>
-    function Userinfo(e) {
-        e.preventDefault()
-        window.location.href = "User_reg.html"
-    }
-    function ProInfo(e) {
-        e.preventDefault()
-        window.location.href = "Pro_reg.html"
-    }
-    function goHome() {
-        window.location.href = "index.html"
-    }
-    function registration() {
-        window.location.href = "reg.html"
-    }
-    function loggin() {
-        window.location.href = "logged.html"
-    }
-
-
-</script>
 
 </html>

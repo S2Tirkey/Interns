@@ -16,9 +16,9 @@
             <img src="img/find.png" alt="Finding Worker">
         </div>
         <div class="menus">
-            <h3 onclick="goHome()">Home</h3>
-            <h3 onclick="loggin()">Login</h3>
-            <h3 onclick="registration()">Register</h3>
+            <a href="index.html">Home</a>
+            <a href="logged.html">Login</a>
+            <a href="reg.html">Register</a>
         </div>
     </div><br>
     <section class="container" id="Pro-reg">
@@ -89,15 +89,6 @@
     </section>
 </body>
 <script>
-    function goHome() {
-        window.location.href = "index.html"
-    }
-    function registration() {
-        window.location.href = "reg.html"
-    }
-    function loggin() {
-        window.location.href = "logged.html"
-    }
     function reg(e) {
         e.preventDefault();
         let FN = document.getElementById('Pname').value
