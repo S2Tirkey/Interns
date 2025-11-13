@@ -16,8 +16,9 @@
         </div>
         <div class="menus">
             <a href="">Home</a>
-            <a href="logged.html">Login</a>
-            <a href="reg.html">Register</a>
+            <a href="logged.html" id="log">Login</a>
+            <a href="reg.html" id="reg">Register</a>
+            <a onclick="Logout()" id="out">Logout</a>
         </div>
     </div>
     <section class="hero">
@@ -85,4 +86,23 @@
                 alt="INSTA"></a>
     </section>
 </body>
+<script>
+    let logged = localStorage.getItem('isLoggedIn')
+    function Logout(){
+        localStorage.removeItem("isLoggedIn");
+        window.location.reload()
+    }
+    function first(){
+        if (logged === "true"){
+            document.getElementById('log').innerHTML = "Profile"
+            document.getElementById('log').href = "Profile.html"
+            document.getElementById('reg').style ="display:none"
+            document.getElementById('out').style = "display:block"
+        }
+        else{
+            document.getElementById('out').style ="display:none"
+        }
+    }
+    first()
+</script>
 </html>

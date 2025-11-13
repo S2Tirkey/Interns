@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(#7ed9f4, #c597f1, #dfd6d6);
+    background-color:#7ed9f4; 
     margin: auto;
     cursor: default;
 }
@@ -43,6 +43,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     margin: auto;
+    color: black;
 }
 
 .nav-bar .menus a:hover {
