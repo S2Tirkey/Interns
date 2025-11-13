@@ -36,9 +36,13 @@ body {
     width: 40%;
     display: flex;
     justify-content: space-around;
+}
+.nav-bar .menus h3{
     cursor: pointer;
 }
+/* .nav-bar .menus h3:hover{
 
+} */
 .hero {
     margin-top: 8vh;
     background: linear-gradient(#7ed9f4, #c597f1, #dfd6d6);
@@ -129,11 +133,17 @@ body {
 #inworker img {
     object-fit: contain;
     border-radius: 50%;
+
+}
+#H3_div{
+    margin: auto;
+    text-align: center;
+    margin-left: 1%;
 }
 
-#H3_div,
 #H_div {
     margin: auto;
+     text-align: center;
 }
 
 
