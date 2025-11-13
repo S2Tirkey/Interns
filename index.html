@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="log">
+            <img src="img/find.png" alt="Finding Worker">
+        </div>
+        <div class="menus">
+            <h3>Home</h3>
+            <h3 onclick="loggedIn()">Login</h3>
+            <h3 onclick="registration()">Register</h3>
+        </div>
+    </div>
+    <section class="hero">
+        <h1>Welcome to Finding Worker</h1>
+        <p>Need a mechanic, plumber, or electrician? We’ll help you find the right one near you.</p>
+        <a href="User_log.html" class="btn">Find a Worker</a>
+    </section>
+
+    <section class="head">
+        <div class="work_1" id="work">
+            <div id="inworker">
+                <div><img src="img/mec.jpg" alt=""></div>
+                <div id="H3_div">
+                    <h3>When the road stops moving your way,the mechanic brings it back to life.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="work_2" id="work">
+            <div id="inwork">
+                <div><img src="img/plum.jpg" alt=""></div>
+                <div id="H_div">
+                    <h3>When the water turns trouble, the plumber makes it right again.</h3>
+                </div>
+            </div>
+        </div>
+        <div class="work_3" id="work">
+            <div id="inworker">
+                <div><img src="img/elect.jpg" alt=""></div>
+                <div id="H3_div">
+                    <h3>When the lights go out or the switch won’t work, reach out to the electrician</h3>
+                </div>
+            </div>
+        </div>
+        <div class="work_4" id="work">
+            <div id="inwork">
+                <div><img src="img/car.jpg" alt=""></div>
+                <div id="H_div">
+                    <h3>When your furniture starts to lose its charm, think of the carpenter</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about_sec">
+        <h1>About us</h1>
+        <div class="abt">
+            <div class="abt_nm">
+                <img src="img/a3.png" alt="sanyam">
+                <h4></h4>
+            </div>
+            <div class="data">
+                <h3>Email: .com</h3>
+                <h3>Address:</h3>
+                <h3>Phone: 123456789</h3>
+            </div>
+        </div>
+        <h3>We know this type's of problem's. That's why we started this feature where anyone can solve their problems
+            with expert's.</h3>
+        <h3>So, enjoy and be healthy</h3>
+    </section>
+    <section class="foot">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/19vDjDGpLr/"><img src="img/fb.svg" alt="FB"></a>
+        <a href="https://wa.me/8982644723"><img src="img/wa.svg" alt="WA"></a>
+        <a href="https://www.instagram.com/sanyam_tirkey?igsh=MTVqY29wbHpxZXVqbQ=="><img src="img/insta.svg"
+                alt="INSTA"></a>
+    </section>
+</body>
+<script>
+    function registration() {
+        window.location.href = "reg.html"
+    }
+    function loggedIn() {
+        window.location.href = "logged.html"
+    }
+</script>
+
+</html>

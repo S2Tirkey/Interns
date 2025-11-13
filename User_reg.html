@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="log">
+            <img src="img/find.png" alt="Finding Worker">
+        </div>
+        <div class="menus">
+            <h3 onclick="goHome()">Home</h3>
+            <h3 onclick="loggin()">Login</h3>
+            <h3 onclick="registration()">Register</h3>
+        </div>
+    </div><br>
+    <section class="container" id="User-reg">
+        <h2><img class="U-img" src="" alt=""></h2>
+        <header>Registration Form</header>
+        <form class="form" action="#">
+            <div class="input-box">
+                <label>Full Name</label>
+                <input required="" placeholder="Enter full name" type="text" id="Uname">
+            </div>
+            <div class="column">
+                <div class="input-box" id="in">
+                    <label>Phone Number</label>
+                    <input required="" placeholder="Enter phone number" type="telephone" id="Uphn">
+                </div>
+                <div class="input-box" id="in">
+                    <label>Birth Date</label>
+                    <input required="" placeholder="dd-mm-yyyy" type="date" id="Udob">
+                </div>
+            </div>
+            <label>Gender</label>
+            <div class="gender-option">
+                <label>
+                    <input type="radio" name="gender" value="Male"> Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Female"> Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Other"> Other
+                </label>
+            </div>
+            <div class="input-box" id="in">
+                <label>Email</label>
+                <input required="" placeholder="Enter Email" type="email" id="Umail">
+            </div>
+            </div>
+            <div class="input-box">
+                <label>Password</label>
+                <input required id="Upass" name="password" placeholder="Enter password" type="password" />
+            </div>
+            <div class="input-box">
+                <label>Confirm Password</label>
+                <input required id="Ucon_pass" name="confirm_password" placeholder="Confirm password" type="password" />
+            </div>
+            <div class="input-box address">
+                <label>Address</label>
+                <div class="columns">
+                    <div class="select-box">
+                        <select id="Ustate">
+                            <option hidden="">State</option>
+                            <option>Chhatisgarh</option>
+                            <option>madhyprades</option>
+                            <option>delhi</option>
+                            <option>chinnai</option>
+                        </select>
+                    </div>
+                    <input required="" placeholder="Enter your dist" type="text" id="Udist">
+                </div>
+                <input required="" placeholder="Enter full address" type="text" id="UAdd">
+            </div>
+            <button onclick="reg(event)">Submit</button>
+        </form>
+    </section>
+    <section class="foot">
+        <h2>Follow Us</h2>
+        <a href="#"><img src="img/fb.svg" alt="FB"></a>
+        <a href="#"><img src="img/wa.svg" alt="WA"></a>
+        <a href="#"><img src="img/insta.svg" alt="INSTA"></a>
+    </section>
+</body>
+<script>
+    function goHome() {
+        window.location.href = "index.html"
+    }
+    function registration() {
+        window.location.href = "reg.html"
+    }
+    function loggin() {
+        window.location.href = "logged.html"
+    }
+    function reg(e) {
+        e.preventDefault();
+        let FN = document.getElementById('Uname').value
+        let Phn = document.getElementById('Uphn').value
+        let dob = document.getElementById('Udob').value
+        let sex = document.querySelector('input[name="gender"]:checked')?.value || ""
+        let email = document.getElementById('Umail').value
+        let Pass = document.getElementById('Upass').value
+        let C_Pass = document.getElementById('Ucon_pass').value
+        let state = document.getElementById('Ustate').value
+        let dist = document.getElementById('Udist').value
+        let Fadd = document.getElementById('UAdd').value
+        validatePasswords();
+        function submit() {
+            NewData = { FullName: FN, Phone: Phn,DOB:dob,Sex: sex, Email: email, Password: Pass, Confirm_Password: C_Pass, State: state, Dist: dist, F_Add: Fadd }
+            let old_data = JSON.parse(localStorage.getItem('Users')) || []
+            console.log(old_data, 'Old')
+            Upload = [...old_data, NewData]
+            localStorage.setItem('Users', JSON.stringify(Upload))
+        }
+        function validatePasswords() {
+            if (Pass === C_Pass) {
+                submit();
+                alert('Successfully registered.')
+                window.location.href = "index.html"
+            }
+            else {
+                alert('Passwords do not match. Please try again.');
+                e.preventDefault();
+            }
+        }
+    }
+</script>
+
+</html>

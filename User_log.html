@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logged.css">
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="log">
+            <img src="img/find.png" alt="Finding Worker">
+        </div>
+        <div class="menus">
+            <h3 onclick="window.location.href='index.html'">Home</h3>
+            <h3 onclick="window.location.href='logged.html'">Login</h3>
+            <h3 onclick="window.location.href='reg.html'">Register</h3>
+        </div>
+    </div><br>
+
+    <section id="users">
+        <div class="form-container">
+            <p class="title">USER _ Login</p>
+            <form class="form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="">
+                    <div class="forgot">
+                        <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+                    </div>
+                </div>
+                <button onclick="login(event)" class="sign">Sign in</button>
+            </form>
+            <div class="social-message">
+                <div class="line"></div>
+                <p class="message">Login with social accounts</p>
+                <div class="line"></div>
+            </div>
+            <p class="signup">Don't have an account?
+                <a rel="noopener noreferrer" href="reg.html" class="">Register</a>
+            </p>
+        </div>
+    </section>
+        <section class="foot">
+        <h2>Follow Us</h2>
+        <a href="#"><img src="img/fb.svg" alt="FB"></a>
+        <a href="#"><img src="img/wa.svg" alt="WA"></a>
+        <a href="#"><img src="img/insta.svg" alt="INSTA"></a>
+    </section>
+</body>
+<script>
+    function login(e) {
+        e.preventDefault();
+  const email = document.getElementById("username").value
+  const password = document.getElementById("password").value
+  if (!email || !password) {
+    alert("Please enter both email and password.");
+    return;
+  }
+  const users = JSON.parse(localStorage.getItem('Users')) || [];
+  const user = users.find(user => user.Email === email);
+
+  if (!user) {
+    alert("Email not found! Please sign up first.");
+    return;
+  }
+  if (user.Password === password) {
+    alert("Login successful!");
+    window.location.href = "index.html";
+  } else {
+    alert("Incorrect password. Try again.");
+  }
+}
+</script>
+</html>

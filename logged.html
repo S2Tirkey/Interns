@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logged.css">
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="log">
+            <img src="img/find.png" alt="Finding Worker">
+        </div>
+        <div class="menus">
+            <h3 onclick="window.location.href='index.html'">Home</h3>
+            <h3 onclick="window.location.href='logged.html'">Login</h3>
+            <h3 onclick="window.location.href='reg.html'">Register</h3>
+        </div>
+    </div><br>
+
+    <section class="category" id="info">
+            <h1 onclick="Userinfo()">User</h1>
+            <h1 onclick="ProInfo(event)">Provider</h1>
+    </section>
+    <section class="foot">
+        <h2>Follow Us</h2>
+        <a href="#"><img src="img/fb.svg" alt="FB"></a>
+        <a href="#"><img src="img/wa.svg" alt="WA"></a>
+        <a href="#"><img src="img/insta.svg" alt="INSTA"></a>
+    </section>
+</body>
+<script>
+
+    function Userinfo(e){
+        window.location.href = "User_log.html"
+    }
+    function ProInfo(e){
+        window.location.href = "Pro_log.html"
+    }
+</script>
+</html>

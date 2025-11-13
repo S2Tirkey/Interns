@@ -1,0 +1,13 @@
+.foot{
+    width: 100%;
+    height: auto;
+    padding: 6px 0;
+    text-align: center;
+    background: linear-gradient(#daeaee,#a5d2f7, #8fc9f9);
+}
+.foot a{
+    margin: 0 10px;
+}
+.foot a img{
+    width: 30px;
+}

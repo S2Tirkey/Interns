@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="foot.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="log">
+            <img src="img/find.png" alt="Finding Worker">
+        </div>
+        <div class="menus">
+            <h3 onclick="goHome()">Home</h3>
+            <h3 onclick="loggin()">Login</h3>
+            <h3 onclick="registration()">Register</h3>
+        </div>
+    </div><br>
+
+    <section class="category" id="info">
+        <h1 onclick="Userinfo(event)">User</h1>
+        <h1 onclick="ProInfo(event)">Provider</h1>
+    </section>
+    <section class="foot">
+        <h2>Follow Us</h2>
+        <a href="#"><img src="img/fb.svg" alt="FB"></a>
+        <a href="#"><img src="img/wa.svg" alt="WA"></a>
+        <a href="#"><img src="img/insta.svg" alt="INSTA"></a>
+    </section>
+</body>
+<script>
+    function Userinfo(e) {
+        e.preventDefault()
+        window.location.href = "User_reg.html"
+    }
+    function ProInfo(e) {
+        e.preventDefault()
+        window.location.href = "Pro_reg.html"
+    }
+    function goHome() {
+        window.location.href = "index.html"
+    }
+    function registration() {
+        window.location.href = "reg.html"
+    }
+    function loggin() {
+        window.location.href = "logged.html"
+    }
+
+
+</script>
+
+</html>
