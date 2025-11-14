@@ -48,7 +48,7 @@
             </p>
         </div>
     </section>
-        <section class="foot">
+    <section class="foot">
         <h2>Follow Us</h2>
         <a href="#"><img src="img/fb.svg" alt="FB"></a>
         <a href="#"><img src="img/wa.svg" alt="WA"></a>
@@ -58,26 +58,27 @@
 <script>
     function login(e) {
         e.preventDefault();
-  const email = document.getElementById("username").value
-  const password = document.getElementById("password").value
-  if (!email || !password) {
-    alert("Please enter both email and password.");
-    return;
-  }
-  const users = JSON.parse(localStorage.getItem('Provider')) || [];
-  const user = users.find(user => user.Email === email);
+        const email = document.getElementById("username").value
+        const password = document.getElementById("password").value
+        if (!email || !password) {
+            alert("Please enter both email and password.");
+            return;
+        }
+        const users = JSON.parse(localStorage.getItem('Provider')) || [];
+        const user = users.find(user => user.Email === email);
 
-  if (!user) {
-    alert("Email not found! Please sign up first.");
-    return;
-  }
-  if (user.Password === password) {
-    localStorage.setItem("isLoggedIn", "true");
-    alert("Login successful!");
-    window.location.href = "index.html";
-  } else {
-    alert("Incorrect password. Try again.");
-  }
-}
+        if (!user) {
+            alert("Email not found! Please sign up first.");
+            return;
+        }
+        if (user.Password === password) {
+            localStorage.setItem("isLoggedIn", JSON.stringify(true));
+            alert("Login successful!");
+            window.location.href = "index.html";
+        } else {
+            alert("Incorrect password. Try again.");
+        }
+    }
 </script>
+
 </html>

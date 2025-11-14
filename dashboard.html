@@ -20,7 +20,7 @@
         </div>
     </div><br>
 <section class="main_body">
-    <div>
+    <div id="info">
 
     </div>
 </section>
@@ -33,6 +33,20 @@
     </section>
 </body>
 <script>
+    function show(){
+        let worker = document.getElementById('info')
+        worker.innerHTML = '';
+       let provider = JSON.parse(localStorage.getItem('Provider')) || []
+       provider.map(i => {
+        worker.innerHTML +=
+        `<div class="worker-card" > <h1> ${i.FullName}</h1>
+        <h4>${"DOB: " + i.DOB}</h4>
+        <h4>${"Address: " + i.F_Add + ", Dist: " + i.Dist}</h4>
+        <h4>${"State: "+ i.State}</h4>
+        </div>`
+       });
+    }
+    show()
     function Logout(){
         localStorage.removeItem("isLoggedIn");
         window.location.href = "index.html"

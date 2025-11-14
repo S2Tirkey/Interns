@@ -4,3 +4,28 @@ body{
 .main_body{
 margin-top: 15vh;
 }
+#info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+.worker-card {
+  background: white;
+  width: 280px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.worker-card h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+}
+
+.worker-card h4 {
+  margin: 4px 0;
+  font-weight: normal;
+}

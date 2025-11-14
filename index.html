@@ -16,15 +16,16 @@
         </div>
         <div class="menus">
             <a href="">Home</a>
-            <a href="logged.html" id="log">Login</a>
             <a href="reg.html" id="reg">Register</a>
+            <a href="logged.html" id="log">Login</a>
+            <a href="Profile.html" id="pro">Profile</a>
             <a onclick="Logout()" id="out">Logout</a>
         </div>
     </div>
     <section class="hero">
         <h1>Welcome to Finding Worker</h1>
         <p>Need a mechanic, plumber, or electrician? We’ll help you find the right one near you.</p>
-        <a href="User_log.html" class="btn">Find a Worker</a>
+        <a onclick="dash()" class="btn">Find a Worker</a>
     </section>
 
     <section class="head">
@@ -78,31 +79,41 @@
             with expert's.</h3>
         <h3>So, enjoy and be healthy</h3>
     </section>
-    <section class="foot">
+    <footer class="foot">
         <h2>Follow Us</h2>
         <a href="https://www.facebook.com/share/19vDjDGpLr/"><img src="img/fb.svg" alt="FB"></a>
         <a href="https://wa.me/8982644723"><img src="img/wa.svg" alt="WA"></a>
         <a href="https://www.instagram.com/sanyam_tirkey?igsh=MTVqY29wbHpxZXVqbQ=="><img src="img/insta.svg"
                 alt="INSTA"></a>
-    </section>
+    </footer>
 </body>
 <script>
-    let logged = localStorage.getItem('isLoggedIn')
-    function Logout(){
-        localStorage.removeItem("isLoggedIn");
-        window.location.reload()
-    }
-    function first(){
-        if (logged === "true"){
-            document.getElementById('log').innerHTML = "Profile"
-            document.getElementById('log').href = "Profile.html"
-            document.getElementById('reg').style ="display:none"
+    let logged = JSON.parse(localStorage.getItem('isLoggedIn'))
+    function first() {
+        if (logged === true) {
+            document.getElementById('log').style = "display:none"
+            document.getElementById('reg').style = "display:none"
+            document.getElementById('pro').style = "display:block"
             document.getElementById('out').style = "display:block"
         }
-        else{
-            document.getElementById('out').style ="display:none"
+        else {
+            document.getElementById('pro').style = "display:none"
+            document.getElementById('out').style = "display:none"
         }
     }
     first()
+    function dash(){
+        if(logged === true){
+            window.location.href = "dashboard.html"
+        }
+        else{
+            window.location.href = "User_log.html"
+        }
+    }
+    function Logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.reload()
+    }
 </script>
+
 </html>
