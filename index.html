@@ -18,7 +18,6 @@
             <a href="">Home</a>
             <a href="reg.html" id="reg">Register</a>
             <a href="logged.html" id="log">Login</a>
-            <a href="Profile.html" id="pro">Profile</a>
             <a onclick="Logout()" id="out">Logout</a>
         </div>
     </div>
@@ -93,11 +92,9 @@
         if (logged === true) {
             document.getElementById('log').style = "display:none"
             document.getElementById('reg').style = "display:none"
-            document.getElementById('pro').style = "display:block"
             document.getElementById('out').style = "display:block"
         }
         else {
-            document.getElementById('pro').style = "display:none"
             document.getElementById('out').style = "display:none"
         }
     }
