@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="date" id="dob"><br><br>
+  <button onclick="show()">check</button><br><br>
+  <label id="age"></label>
+</body>
+<script>
+  function showAge() {
+    let dob = document.getElementById("dob").value;
+    if (!dob) return;
+    let birthDate = new Date(dob);
+    let today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let month = today.getMonth() - birthDate.getMonth();
+    let day = today.getDate() - birthDate.getDate();
+    if (month < 0 || (month === 0 && day < 0)) {
+      age--;
+    }
+    return age;
+  }
+function show(){
+let res = showAge();
+console.log(res)
+}
+</script>
+
+</html>

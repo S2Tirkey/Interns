@@ -1,3 +1,6 @@
+body {
+   margin-bottom: 10vh;
+}
 .nav-bar {background:linear-gradient(rgb(233, 224, 233),rgb(28, 199, 247) );
 }
 

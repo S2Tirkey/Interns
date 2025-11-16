@@ -15,7 +15,7 @@
         <div class="log">
             <img src="img/find.png" alt="Finding Worker">
         </div>
-     <div class="menus">
+        <div class="menus">
             <a href="index.html">Home</a>
             <a href="logged.html">Login</a>
             <a href="reg.html">Register</a>
@@ -91,11 +91,24 @@
     </section>
 </body>
 <script>
+    function calAge() {
+        let dob = document.getElementById("Udob").value;
+        if (!dob) return;
+        let birthDate = new Date(dob);
+        let today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let month = today.getMonth() - birthDate.getMonth();
+        let day = today.getDate() - birthDate.getDate();
+        if (month < 0 || (month === 0 && day < 0)) {
+            age--;
+        }
+        return age;
+    }
     function reg(e) {
         e.preventDefault();
         let FN = document.getElementById('Uname').value
         let Phn = document.getElementById('Uphn').value
-        let dob = document.getElementById('Udob').value
+        let age = calAge()
         let sex = document.querySelector('input[name="gender"]:checked')?.value || ""
         let email = document.getElementById('Umail').value
         let Pass = document.getElementById('Upass').value
@@ -105,7 +118,7 @@
         let Fadd = document.getElementById('UAdd').value
         validatePasswords();
         function submit() {
-            NewData = { FullName: FN, Phone: Phn,DOB:dob,Sex: sex, Email: email, Password: Pass, Confirm_Password: C_Pass, State: state, Dist: dist, F_Add: Fadd }
+            NewData = { FullName: FN, Phone: Phn, Age: age, Sex: sex, Email: email, Password: Pass, Confirm_Password: C_Pass, State: state, Dist: dist, F_Add: Fadd }
             let old_data = JSON.parse(localStorage.getItem('Users')) || []
             console.log(old_data, 'Old')
             Upload = [...old_data, NewData]
