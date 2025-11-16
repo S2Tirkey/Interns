@@ -58,7 +58,8 @@ body {
 }
 
 .container .U-img {
-    width: 80px;
+    width: 12vw;
+    margin: -3.4rem 0 -5rem; 
 }
 
 .container header {
