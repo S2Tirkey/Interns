@@ -180,11 +180,9 @@ body {
     width: 25%;
     height: auto;
     border-radius: 50%;
-    border: 2px solid black;
 }
 
 .data {
     width: 50%;
     padding-top: 3.5rem;
-    border: 2px solid black;
 }
